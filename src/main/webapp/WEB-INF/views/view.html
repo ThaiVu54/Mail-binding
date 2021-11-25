@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Submitted Employee Information</h2>
+<table style="border: 1px solid black">
+    <tr>
+        <th>id</th>
+        <th>pageSize</th>
+        <th>languages</th>
+        <th>filter</th>
+        <th>signature</th>
+    </tr>
+    <tr th:each="mail: ${mailList}">
+        <td th:text="${mail.id}"></td>
+        <td th:text="${mail.size}"></td>
+        <td th:text="${mail.languages}"></td>
+        <td th:text="${mail.spam}"></td>
+        <td th:text="${mail.signature}"></td>
+    </tr>
+    <a href="/mail/showCreate">Tạo mới</a>
+</table>
+</body>
+</html>
